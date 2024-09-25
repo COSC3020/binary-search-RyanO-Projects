@@ -10,13 +10,13 @@ function binarySearch(list, element) {
     //  elif (element > middle) {narrow to [(middle+1) - last], rinse and repeat: assign new middle value, compare element to new middle}
     var first = 0;
     var last = list.length - 1;
-    var found = False;
+    var found = false;
 
     while(!found){
         var middle = math.floor((first + last) / 2);
 
         if (element == list[middle]) {
-            found = True;
+            found = true;
         }
         else if (element < list[middle]) {
             last = middle - 1;
