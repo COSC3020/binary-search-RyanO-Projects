@@ -12,7 +12,7 @@ function binarySearch(list, element) {
     var last = list.length - 1;
 
     while(first <= last){
-        var middle = math.floor((first + last) / 2);
+        var middle = Math.floor((first + last) / 2);
 
         if (element == list[middle]) {
             return middle;
