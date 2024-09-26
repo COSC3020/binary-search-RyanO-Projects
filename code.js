@@ -10,12 +10,14 @@ function binarySearch(list, element) {
     //  elif (element > middle) {narrow to [(middle+1) - last], rinse and repeat: assign new middle value, compare element to new middle}
     var first = 0;
     var last = list.length - 1;
+    var index = -1;
 
     while(first <= last){
         var middle = first + Math.floor((last - first) / 2);
 
         if (element == list[middle]) {
-            return middle;
+            index = middle;
+            last = middle - 1;    // Search for earliest instance in the case of duplicates assuming that is what's required with duplicates.
         }
         else if (element < list[middle]) {
             last = middle - 1;
@@ -25,5 +27,5 @@ function binarySearch(list, element) {
         }
     }
     
-    return -1;
+    return index;
 }
